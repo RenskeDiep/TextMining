@@ -1,0 +1,139 @@
+desktop{
+  font-size: 18px;
+}
+
+mobile{
+  font-size: 12px;
+}
+
+h1, h2 {
+  color: white;
+}
+
+h1 {
+  text-align: center;
+  font-size: 30px;
+}
+
+body {
+    color: black;
+    background: #EDEDED;
+    text-align: center;
+}
+
+body>#logo {
+  margin-top: 1%;
+}
+
+.subtitle {
+  text-align: center;
+  font: 18px Arial, sans-serif;
+}
+
+
+.filters {
+  /* margin: 40px 0px; */
+  font-family: Arial;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  font: 20px Arial, sans-serif;
+
+  color: white;
+  text-align: left;
+}
+
+.table {
+  margin: 20px 0px;
+  display: inline-block;
+}
+
+.right-column>.table {
+  font-family: Arial;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  font: 15px Arial, sans-serif;
+
+  color: black;
+  text-align: left;
+
+  /* Align content to the right of the screen */
+
+  /* float: left; */
+}
+
+.left-column {
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 3%;
+  min-width: 30%;
+  padding: 15px;
+  border-radius: 25px;
+
+  float: left;
+}
+
+.right-column {
+  margin-right: 5%;
+  margin-top: 3%;
+  min-width: 50%;
+  float: right;
+}
+
+.right-section {
+  background-color: white;
+  margin-bottom: 1%;
+  padding: 15px;
+  border-radius: 25px;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+#AgeRestriction2 {
+  width: 50%;
+}
+
+/* GENRE DROPDOWN */
+.multipleSelection {
+  width: 60%;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.selectBox {
+  position: relative;
+}
+
+.selectBox select {
+  width: 100%;
+  font-weight: bold;  
+}
+
+.overSelect {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+#checkBoxes, #optionAgeRestriction {
+  display: none;
+  color: black;
+  margin-left: 4px;
+}
+.multipleSelection>label {
+  display: block;
+  text-align: center;
+}
+
+#checkBoxes label, #optionAgeRestriction label {
+  display: block;
+}
+/* ---------------- */
