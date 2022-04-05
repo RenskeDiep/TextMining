@@ -1,0 +1,107 @@
+/*global layout*/
+  .container{
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+  }
+  
+/*layout body*/
+body{
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    font-weight: normal;
+    font-variant: normal;
+    line-height: 1.5;
+    padding:0;
+    margin:0;
+    background-color: #dfe4e6;
+}
+
+/*layout left box*/
+.inputbox {
+    float: left;
+    width: 27%;
+    margin-left: 18%;
+    margin-top: 25px;
+    padding: 5px;
+    border: #2c2a27 3px solid;
+    }
+
+/*layout right box*/
+.outputBoxRight {
+    float: right;
+    width: 27%;
+    margin-right: 18%;
+    margin-top: 25px;
+    padding: 5px;
+    border: #2c2a27 3px solid;
+    }
+
+/*layout bottom box*/
+.outputBoxBot {
+    float: Center;
+    width: 54%;
+    margin: auto;
+    margin-top: 22%;
+    padding: 5px;
+    border: #2c2a27 3px solid;
+    }
+  
+  /*layout header*/
+    header{
+      font: 16px/1.5 sans-serif;
+      background-color: #adb6c4;
+      color: black;
+      padding-top: 30px;
+      min-height: 70px;
+      border-bottom: #7e7261 6px solid;
+    }
+    header #pageTitle{
+      float: left;
+    }
+    header #pageTitle h1{
+      margin: 0px 5px 10px 10px;
+    }   
+    header .highlight, header .current a{
+      color: #e8491d;
+      font-weight: 400;
+    }
+
+    /*layout button*/
+    .button {
+        background-color: #5ebcd8;
+        border: none;
+        color: white;
+        padding: 8px 26px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+
+    /*layout video*/
+    .video-trailer {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+    .color-overlay{
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: white;
+        width: 100%;
+        height: 100vh;
+        opacity: 0.55;
+    }
+  
