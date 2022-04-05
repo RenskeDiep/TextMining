@@ -17,36 +17,37 @@ body{
     background-color: #dfe4e6;
 }
 
+
+ul{
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    margin-left: 20%;
+  }
+
 /*layout left box*/
 .inputbox {
-    float: left;
-    width: 27%;
-    margin-left: 18%;
+    float: auto;
     margin-top: 25px;
     padding: 5px;
-    border: #2c2a27 3px solid;
     }
 
 /*layout right box*/
 .outputBoxRight {
-    float: right;
-    width: 27%;
-    margin-right: 18%;
+    float: auto;
     margin-top: 25px;
     padding: 5px;
-    border: #2c2a27 3px solid;
+    margin-left: 40%;
     }
+    
 
 /*layout bottom box*/
 .outputBoxBot {
     float: Center;
-    width: 54%;
     margin: auto;
-    margin-top: 22%;
-    padding: 5px;
-    border: #2c2a27 3px solid;
     }
-  
+
   /*layout header*/
     header{
       font: 16px/1.5 sans-serif;
