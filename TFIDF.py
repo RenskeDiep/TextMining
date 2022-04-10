@@ -7,6 +7,7 @@ from nltk.stem.snowball import EnglishStemmer
 import string
 from collections import namedtuple, defaultdict, Counter
 from math import log10, sqrt
+from sklearn.metrics import classification_report
 
 stemmer = EnglishStemmer()
 all_text_classified = []
@@ -97,6 +98,9 @@ def scoring_query(query):
     cleaned_query = [token for token in cleaned_messy_query if token != '']
 
     speaker_list = retrieve_speakers(cleaned_query)
+    if speaker_list == []:
+        return [('chandler', 1 / 6), ('ross', 1 / 6), ('monica', 1 / 6), ('joey', 1 / 6), ('phoebe', 1 / 6),
+                ('rachel', 1 / 6)]
 
     for speaker in speaker_list:
         tfidf_score = score(cleaned_query, speaker)
@@ -113,6 +117,51 @@ def normalize(list):
         prob_factor = 1 / sum(list)
         return [prob_factor * p for p in list]
 
+def prediction_rep(query):
+    scores = scoring_query(query)
+    score_list = []
+    pred= []
+    for score in scores:
+        score_list.append(score[1])
+    score_list = normalize((score_list))
+    for i in range(len(scores)):
+        pred.append((scores[i][0], score_list[i]))  #(speaker, probability)
+    return pred[0][0]
+
+test_labels = []
+for i in range(len(pre.test['Speaker'])):
+    label = pre.test['Speaker'][i]
+    if label == 'rachel':
+        test_labels.append(2)
+    elif label == 'monica':
+        test_labels.append(0)
+    elif label == 'phoebe':
+        test_labels.append(1)
+    elif label == 'chandler':
+        test_labels.append(3)
+    elif label == 'joey':
+        test_labels.append(4)
+    elif label == 'ross':
+        test_labels.append(5)
+test_predictions = []
+for i in range(len(pre.test['Text'])):
+    query = pre.test['Text'][i]
+    pred = prediction_rep(query)
+    if pred == 'rachel':
+        test_predictions.append(2)
+    elif pred == 'monica':
+        test_predictions.append(0)
+    elif pred == 'phoebe':
+        test_predictions.append(1)
+    elif pred == 'chandler':
+        test_predictions.append(3)
+    elif pred == 'joey':
+        test_predictions.append(4)
+    elif pred == 'ross':
+        test_predictions.append(5)
+
+def classification_report(test_labels, test_predictions):
+    print(classification_report(test_labels, test_predictions))
 
 def prediction(query):
     scores = scoring_query(query)
