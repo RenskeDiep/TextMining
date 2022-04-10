@@ -8,10 +8,6 @@ df = pd.read_csv("cleaned_data.csv")
 df['Text'] = df['Text'].str.lower()
 df.drop('Unnamed: 0', axis=1, inplace=True)
 
-train=df.sample(frac=0.9)
-train.reset_index(drop=True, inplace=True)
-test=df.drop(train.index)
-test.reset_index(drop=True, inplace=True)
 
 # Text per person, tokenized and stemmed
 stemmer = EnglishStemmer()
@@ -22,16 +18,8 @@ phoebe_text = []
 rachel_text = []
 ross_text = []
 
-stemmer = EnglishStemmer()
-monica_text = []
-chandler_text = []
-joey_text = []
-phoebe_text = []
-rachel_text = []
-ross_text = []
-
-for i in range(1, len(train)):
-    text = train["Text"][i]
+for i in range(1, len(df)):
+    text = df["Text"][i]
     tokenized_text = nltk.word_tokenize(text)  # tokenize text
     # clean tokenized text
     table = {ord(char): '' for char in string.punctuation}
@@ -42,7 +30,7 @@ for i in range(1, len(train)):
         cleaned_messy_sentence.append(cleaned_word_stemmed)
     cleaned_sentence = [token for token in cleaned_messy_sentence if token != '']
 
-    speaker = train["Speaker"][i]
+    speaker = df["Speaker"][i]
     if speaker == "monica":
         monica_text.append(cleaned_sentence)
     elif speaker == "chandler":
