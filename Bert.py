@@ -2,11 +2,11 @@ if __name__ == '__main__' or __name__ == 'Bert':
 
     import numpy as np
     import torch
-    import TFIDF as tf
 
     #BERT
 
     #load trained model
+    # change path to where the model is stored
     model = torch.load('../bert_model_big.pth', map_location=torch.device('cpu'))
 
     def softmax(probs):

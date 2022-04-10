@@ -1,4 +1,7 @@
-import Preprocessing as pre
+try:
+    import Preprocessing as pre
+except:
+    from . import Preprocessing as pre
 import nltk
 from nltk.stem.snowball import EnglishStemmer
 import string
