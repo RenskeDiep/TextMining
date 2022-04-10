@@ -7,7 +7,7 @@ if __name__ == '__main__' or __name__ == 'Bert':
 
     #load trained model
     # change path to where the model is stored
-    model = torch.load('bert_model_big.pth', map_location=torch.device('cpu'))
+    model = torch.load('bert_model.pth', map_location=torch.device('cpu'))
 
     def softmax(probs):
         return np.exp(probs) / np.sum(np.exp(probs), axis=0)
