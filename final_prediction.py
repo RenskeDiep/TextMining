@@ -19,7 +19,8 @@ def predict(query):   #input string or something that can be turned into string
     bert_values = bert.prediction(query)
     tf_values = tf.prediction(query)
     average = combine(bert_values, tf_values)
-    return average
+    best = sorted(average, key=lambda x: x[1], reverse=True)[0]
+    return best[0], average
 # example:
 if __name__ == '__main__' or __name__ == 'final_prediction':
     print(predict('acting'))
