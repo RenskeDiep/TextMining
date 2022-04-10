@@ -11,7 +11,7 @@ def combine (list1, list2):
         for j in range(len(list2)):
             if list1[i][0] == list2[j][0]:
                 value = average2(list1[i][1], list2[j][1])
-                average.append((list1[i][0], value))
+                average.append((list1[i][0], round(value, 3)))
     return average
 
 def predict(query):   #input string or something that can be turned into string
