@@ -14,7 +14,8 @@ def combine (list1, list2):
                 average.append((list1[i][0], value))
     return average
 
-def predict(query):
+def predict(query):   #input string or something that can be turned into string
+    query = str(query)
     bert_values = bert.prediction(query)
     tf_values = tf.prediction(query)
     average = combine(bert_values, tf_values)
